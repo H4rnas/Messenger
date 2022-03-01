@@ -1,9 +1,9 @@
 FROM python:latest
 
-COPY okok.py okok.py
+COPY sp.py sp.py
 
 COPY install.txt install.txt
 
 RUN pip install -r install.txt
 
-ENTRYPOINT ["python","okok.py"]
+ENTRYPOINT ["python","sp.py"]
