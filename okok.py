@@ -1,7 +1,6 @@
 from flask import Flask, request
 import pyfiglet
 import sys
-import threading
 
 header = pyfiglet.figlet_format("MESSENGER",font='banner3-D',width=100)
 
