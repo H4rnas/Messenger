@@ -10,22 +10,17 @@ if len(sys.argv) == 2:
     app = Flask(__name__)
 
     print(header)
-    print("Listening on port {}".format(str(sys.argv[1]))
+    print("Listening on port %s" % str(sys.argv[1]))
 
-    logging.getLogger("werkzeug").disabled = True
-    os.environ["WERKZEUG_RUN_MAIN"] = "True"
-
-    messages=[]
+    logging.getLogger("werkzeug").disabled =True
+    os.environ["WERKZEUG_RUN_MAIN"] ="True"
 
     @app.route('/',methods=['POST'])
     def messener():
         request_msg=request.get_data(as_text=True)
         print(request_msg)
-        messages.append(request_msg)
-        for m in range(len(messages)):
-            print(messages[m])
         return request_msg
-    app.run(port=8000, use_reloader = False)
+    app.run(port=sys.argv[1], host='0.0.0.0', use_reloader = False)
 
 elif len(sys.argv) == 3:
     try:
@@ -44,5 +39,7 @@ elif len(sys.argv) == 3:
     except Exception as e:
         print("something is wrong")
         print("Details: {}".format(e))
+
+
 
 
