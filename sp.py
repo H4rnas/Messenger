@@ -7,7 +7,7 @@ import sys
 header = pyfiglet.figlet_format("MESSENGER",font='banner3-D',width=100)
 
 if len(sys.argv) == 2:
-    app = Flask(_name_)
+    app = Flask(__name__)
 
     print(header)
     print("Listening on port {}".format(str(sys.argv[1])))
