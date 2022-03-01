@@ -1,9 +1,8 @@
 from flask import Flask, request
 import pyfiglet
 import requests
-import logging
 import sys
-import os
+
 
 header = pyfiglet.figlet_format("MESSENGER",font='banner3-D',width=100)
 
@@ -12,9 +11,6 @@ if len(sys.argv) == 2:
 
     print(header)
     print("Listening on port {}".format(str(sys.argv[1])))
-
-    #logging.getLogger("werkzeug").disabled = True
-    #os.environ["WERKZEUG_RUN_MAIN"] = "true"
 
 
     @app.route('/', methods=['POST'])
